@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "filter": "speciality",
+      "types": [
+        {
+          "id": 0,
+          "name": "all"
+        },
+        {
+          "id": 1,
+          "name": "ortho"
+        },
+        {
+          "id": 2,
+          "name": "dental"
+        },
+        {
+          "id": 3,
+          "name": "spine"
+        },
+        {
+          "id": 4,
+          "name": "trauma"
+        }
+      ]
+    },
+
+    {
+      "filter": "section",
+      "types": [
+        {
+          "id": 0,
+          "name": "all"
+        },
+        {
+          "id": 1,
+          "name": "case study"
+        },
+        {
+          "id": 2,
+          "name": "product information"
+        },
+        {
+          "id": 3,
+          "name": "abstract summary"
+        }
+      ]
+    },
+
+    {
+      "filter": "audience",
+      "types": [
+        {
+          "id": 0,
+          "name": "all"
+        },
+        {
+          "id": 1,
+          "name": "value1"
+        },
+        {
+          "id": 2,
+          "name": "value2"
+        }
+      ]
+    }
+  ]
+}

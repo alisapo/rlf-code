@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: rgb(236, 235, 235);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  padding: 10px 10px 20px 30px;
+  color: rgb(51, 52, 143);
+}
+
+.search {
+  padding-bottom: 7px;
+  border-bottom: 2px solid rgb(151, 150, 150);
+}
+
+.search,
+.filters {
+  display: flex;
+}
+
+.search-form {
+  margin: 13px 0 0 25px;
+}
+
+form {
+  display: flex;
+  border: 1px solid rgb(151, 150, 150);
+}
+
+.search-form input {
+  width: 500px;
+  height: 35px;
+  outline: none;
+  border: none;
+  background-color: rgb(216, 217, 218);
+}
+
+.search-form button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  background-image: url('https://img.icons8.com/fluent-systems-filled/344/search.png');
+  background-color: rgb(216, 217, 218);
+  background-size: cover;
+}
+
+.filters-group {
+  display: flex;
+  margin: 10px 0 0 12px;
+}
+
+.select-filters {
+  height: 35px;
+  outline: none;
+}
+
+.articles-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header {
+  text-transform: uppercase;
+  color: rgb(51, 53, 214);
+  font-weight: bold;
+  font-size: 25px;
+  padding: 20px 0 20px 0;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  width: 320px;
+  margin: 0 10px 30px 10px;
+  padding: 0 10px 10px 10px;
+  background-color: rgb(233, 235, 236);
+}
+
+.view-more {
+  height: 35px;
+  width: 320px;
+  border: 2px solid rgb(51, 53, 214);
+  color: rgb(51, 53, 214);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: white;
+  margin-top: 25px;
+}
+
+.title-card h1 {
+  color: rgb(51, 52, 143);
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.tags-card {
+  display: flex;
+}
+
+.tags-card div {
+  padding-right: 10px;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+
+.filter {
+  display: flex;
+  grid-template-areas: "select";
+  align-items: center;
+  width: 240px;
+  margin-left: 13px;
+  border: 1px solid var(--select-border);
+  font-size: 1.25rem;
+  cursor: pointer;
+  background-color: rgb(236, 235, 235);
+}
+
+select,
+.filter:after {
+  grid-area: "select";
+}
+
+.filter:after {
+  content: "v";
+  justify-self: flex-end;
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
