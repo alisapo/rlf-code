@@ -158,77 +158,73 @@ class App extends React.Component {
             />
           </div>
         </header>
-        <section className="articles">
-          <div
-            className="articles-section"
-            style={{display: !caseStudy.length ? 'none' : 'flex'}}
-          >
-            <div className="section-header">
-              <h1>Case study</h1>
-            </div>
-            <div className="cards-section">
-            {!caseStudy.length
-              ? <div className="no-articles">No articles</div>
-              : caseStudy.slice(0, numOfCS).map((article) =>
-                <Card key={article.id} article={article} />
-            )}
-            </div>
-            <button
-              className="view-more"
-              id="cs"
-              style={{display: caseStudy.length <= numberOfArticles ? 'none' : 'block'}}
-              onClick={(e) => this.handleClick(e.target.id)}
-            >
-              View more
-            </button>
-          </div>
-          <div
-            className="articles-section"
-            style={{display: !productInformation.length ? 'none' : 'flex'}}
-          >
-            <div className="section-header">
-              <h1>Product information</h1>
-            </div>
-            <div className="cards-section">
-            {!productInformation.length
-              ? <div className="no-articles">No articles</div>
-              : productInformation.slice(0, numOfPI).map((article) =>
-                <Card key={article.id} article={article} />
-            )}
-            </div>
-            <button
-              className="view-more"
-              id="pi"
-              style={{display: productInformation.length <= numberOfArticles ? 'none' : 'block'}}
-              onClick={(e) => this.handleClick(e.target.id)}
-            >
-              View more
-            </button>
-          </div>
-          <div
-            className="articles-section"
-            style={{display: !abstractSummary.length ? 'none' : 'flex'}}
-          >
-            <div className="section-header">
-              <h1>Abstract summary</h1>
-            </div>
-            <div className="cards-section">
-              {!abstractSummary.length
-                ? <div className="no-articles">No articles</div>
-                : abstractSummary.slice(0, numOfAS).map((article) =>
-                  <Card key={article.id} article={article} />
-              )}
-            </div>
-            <button
-              className="view-more"
-              id="as"
-              style={{display: abstractSummary.length <= numberOfArticles ? 'none' : 'block'}}
-              onClick={(e) => this.handleClick(e.target.id)}
-            >
-              View more
-            </button>
-          </div>
-        </section>
+        {!articles.length
+          ? <div className="no-results">No results</div>
+          : <section className="articles">
+              <div
+                className="articles-section"
+                style={{display: !caseStudy.length ? 'none' : 'flex'}}
+              >
+                <div className="section-header">
+                  <h1>Case study</h1>
+                </div>
+                <div className="cards-section">
+                  {caseStudy.slice(0, numOfCS).map((article) =>
+                    <Card key={article.id} article={article} />
+                  )}
+                </div>
+                <button
+                  className="view-more"
+                  id="cs"
+                  style={{display: caseStudy.length <= numberOfArticles ? 'none' : 'block'}}
+                  onClick={(e) => this.handleClick(e.target.id)}
+                >
+                  View more
+                </button>
+              </div>
+              <div
+                className="articles-section"
+                style={{display: !productInformation.length ? 'none' : 'flex'}}
+              >
+                <div className="section-header">
+                  <h1>Product information</h1>
+                </div>
+                <div className="cards-section">
+                  {productInformation.slice(0, numOfPI).map((article) =>
+                    <Card key={article.id} article={article} />
+                  )}
+                </div>
+                <button
+                  className="view-more"
+                  id="pi"
+                  style={{display: productInformation.length <= numberOfArticles ? 'none' : 'block'}}
+                  onClick={(e) => this.handleClick(e.target.id)}
+                >
+                  View more
+                </button>
+              </div>
+              <div
+                className="articles-section"
+                style={{display: !abstractSummary.length ? 'none' : 'flex'}}
+              >
+                <div className="section-header">
+                  <h1>Abstract summary</h1>
+                </div>
+                <div className="cards-section">
+                  {abstractSummary.slice(0, numOfAS).map((article) =>
+                    <Card key={article.id} article={article} />
+                  )}
+                </div>
+                <button
+                  className="view-more"
+                  id="as"
+                  style={{display: abstractSummary.length <= numberOfArticles ? 'none' : 'block'}}
+                  onClick={(e) => this.handleClick(e.target.id)}
+                >
+                  View more
+                </button>
+              </div>
+            </section>}
       </div>
     );
   }
