@@ -1,6 +1,6 @@
 //filtering articles
 export const filterArticles = (arr, filters) => {
-  let sectionArr = [], specArr = [], audArr = [];
+  let sectionArr = [], specArr = [];
 
   if (filters.section) {
     sectionArr = arr
@@ -17,7 +17,7 @@ export const filterArticles = (arr, filters) => {
   };
 
   if (filters.audience) {
-    return audArr = specArr
+    return specArr
       .filter(o => o.audience === filters.audience);
   } else {
     return specArr;
